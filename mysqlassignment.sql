@@ -54,3 +54,6 @@ where employees.salary > (
     select avg(salary) from employees inner join departments
 using(department_id));
 
+--Write a SQL query to delete all records from the "employees" table where the salary is less than $30,000.
+delete from employees
+where salary < 30000
