@@ -42,3 +42,15 @@ INSERT INTO
     employees (employee_id, name, salary, department_id)
 VALUES
     (4, 'James Ross', 90000, 1);
+-- Write a SQL query to update the salary of an employee with a specific employee_id.
+update employees
+set salary = 80000
+where employee_id = 3;
+
+--  Write a SQL query to retrieve the names of employees who earn more than the average salary
+select name
+from employees
+where employees.salary > (
+    select avg(salary) from employees inner join departments
+using(department_id));
+
